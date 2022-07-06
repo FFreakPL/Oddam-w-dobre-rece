@@ -3,6 +3,7 @@ import LandingComponent from "./LandingComponent";
 import Info from "./Info";
 import StepsInfo from "./StepsInfo";
 import GiveThings from "./GiveThings";
+import AboutUs from "./AboutUs";
 
 export default function Home(){
 
@@ -12,6 +13,7 @@ export default function Home(){
             <Info/>
             <StepsInfo/>
             <GiveThings/>
+            <AboutUs/>
         </div>
     )
 }
