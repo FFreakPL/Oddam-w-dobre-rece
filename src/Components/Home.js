@@ -4,6 +4,7 @@ import Info from "./Info";
 import StepsInfo from "./StepsInfo";
 import GiveThings from "./GiveThings";
 import AboutUs from "./AboutUs";
+import Contact from "./Contact";
 
 export default function Home(){
 
@@ -14,6 +15,7 @@ export default function Home(){
             <StepsInfo/>
             <GiveThings/>
             <AboutUs/>
+            <Contact/>
         </div>
     )
 }
