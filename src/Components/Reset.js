@@ -1,10 +1,9 @@
 import React, { useState, useEffect} from 'react';
-import Decoration from "./Decorations/Decoration";
 import HeaderLogin from "./HeaderLogin";
 import Header from "./Header";
-import RegisterComponent from "./RegisterComponent";
+import ResetComponent from "./ResetComponent";
 
-export default function Register(){
+export default function Reset(){
 
     const styles = {
         display: "flex",
@@ -20,9 +19,9 @@ export default function Register(){
             <HeaderLogin props={styles}/>
             <div className="login_header">
                 <div className="login_empty"/>
-            <Header/>
+                <Header/>
             </div>
-            <RegisterComponent/>
+            <ResetComponent/>
         </>
     )
 }

@@ -19,7 +19,7 @@ export default function Login(){
             <HeaderLogin props={styles}/>
             <div className="login_header">
                 <div className="login_empty"/>
-            <Header style={{marginLeft: "50vw"}}/>
+            <Header/>
         </div>
             <LoginComponent/>
         </>

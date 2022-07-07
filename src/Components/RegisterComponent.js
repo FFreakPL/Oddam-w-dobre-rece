@@ -1,3 +1,76 @@
+// import React, { useState, useEffect} from 'react';
+// import Decoration from "./Decorations/Decoration";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { Link, useNavigate } from "react-router-dom";
+// import {
+//     auth, logInWithEmailAndPassword,
+//     registerWithEmailAndPassword,
+// } from "./Firebase";
+// import HeaderLogin from "./HeaderLogin";
+// import Header from "./Header";
+//
+// export default function RegisterComponent(){
+//     const [email, setEmail] = useState("");
+//     const [password, setPassword] = useState("");
+//     const [passwordRepeat, setPasswordRepeat] = useState("");
+//     const [name, setName] = useState("");
+//     const [user, loading, error] = useAuthState(auth);
+//     const navigate = useNavigate();
+//     const register = () => {
+//         if (!email) alert("Please enter email");
+//         registerWithEmailAndPassword(email, password);
+//     };
+//     useEffect(() => {
+//         if (loading) return;
+//         if (user) navigate("/");
+//     }, [user, loading]);
+//
+//     return (
+//         <div className="register">
+//             <div className="register_title">Załóż konto</div>
+//             <Decoration/>
+//             <div className="register_container">
+//                 <div className="register_container_email">
+//                     <p className="register_textBox_title">Email</p>
+//                     <input
+//                         type="text"
+//                         className="register_textBox"
+//                         value={email}
+//                         onChange={(e) => setEmail(e.target.value)}
+//                     />
+//                 </div>
+//                 <div className="register_container_password">
+//                     <p className="register_textBox_title">Hasło</p>
+//                     <input
+//                         type="password"
+//                         className="register_textBox"
+//                         value={password}
+//                         onChange={(e) => setPassword(e.target.value)}
+//                     />
+//                 </div>
+//                 {/*<div className="register_container_password">*/}
+//                 {/*    <p className="register_textBox_title">Hasło</p>*/}
+//                 {/*    <input*/}
+//                 {/*        type="password"*/}
+//                 {/*        className="register_textBox"*/}
+//                 {/*        value={password}*/}
+//                 {/*        onChange={(e) => setPasswordRepeat(e.target.value)}*/}
+//                 {/*    />*/}
+//                 {/*</div>*/}
+//             </div>
+//             <div className="register_btn_container">
+//                 <div className="register_register_button">
+//                     <Link to="/login">Zaloguj się</Link>
+//                 </div>
+//                 <div
+//                     className="register_btn"
+//                     onClick={register}
+//                 ><Link to="/">Załóż konto</Link>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
 import React, { useState, useEffect} from 'react';
 import Decoration from "./Decorations/Decoration";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,52 +85,72 @@ import Header from "./Header";
 export default function RegisterComponent(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordRepeat, setPasswordRepeat] = useState("");
     const [name, setName] = useState("");
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
     const register = () => {
-        if (!name) alert("Please enter name");
-        registerWithEmailAndPassword(name, email, password);
+        if (!email) alert("Please enter email");
+        registerWithEmailAndPassword(auth, email, password, passwordRepeat);
     };
     useEffect(() => {
         if (loading) return;
         if (user) navigate("/");
     }, [user, loading]);
 
+    function showError() {
+        alert("Passwords are not the same")
+    }
+
     return (
         <>
             <div className="register">
-                <div className="login_title">Załóż konto</div>
+                <div className="register_title">Załóż konto</div>
                 <Decoration/>
                 <div className="register_container">
-                    <input
-                        type="text"
-                        className="register_textBox"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Nick"
+                    <div className="register_container_email">
+                        <p className="register_textBox_title">Email</p>
+                        <input
+                            type="text"
+                            className="register_textBox"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className="register_container_password">
+                        <p className="register_textBox_title">Hasło</p>
+                        <input
+                            type="password"
+                            className="register_textBox"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                     />
-                    <input
-                        type="text"
-                        className="register_textBox"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Adres E-mail"
-                    />
-                    <input
-                        type="password"
-                        className="register_textBox"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Hasło"
-                    />
-                    <button className="register_btn" onClick={register}>
-                        Załóż konto
-                    </button>
-                    <div className="login_btn_noFrame">
-                        <Link to="/login">Zaloguj się</Link>
+                    </div>
+                    <div className="register_container_password">
+                        <p className="register_textBox_title">Powtórz hasło</p>
+                        <input
+                            type="password"
+                            className="register_textBox"
+                            value={passwordRepeat}
+                            onChange={(e) => setPasswordRepeat(e.target.value)}
+                        />
                     </div>
                 </div>
+                    <div className="register_btn_container">
+                        <div className="register_btn_noFrame">
+                            <Link to="/login">Zaloguj się</Link>
+                        </div>
+                    {password !== passwordRepeat
+                    ?
+                        <button className="register_btn" onClick={() => showError()}>
+                            Załóż konto
+                        </button>
+                    :
+                        <button className="register_btn" onClick={register}>
+                            Załóż konto
+                        </button>
+                    }
+                    </div>
             </div>
         </>
     )

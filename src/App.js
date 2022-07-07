@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import Local from './Components/Local';
 import LoggedIn from './Components/LoggedIn';
 import Login from './Components/Login';
+import Reset from './Components/Reset';
 import LogOutn from './Components/Logoutn';
 import Organizations from './Components/Organizations';
 import Register from './Components/Register';
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/local" element={<Local/>}/>
           <Route exact path="/loggedin" element={<LoggedIn/>}/>
           <Route exact path="/login" element={<Login/>}/>
+          <Route exact path="/reset" element={<Reset/>}/>
           <Route exact path="/logOutn" element={<LogOutn/>}/>
           <Route exact path="/organizations" element={<Organizations/>}/>
           <Route exact path="/register" element={<Register/>}/>
