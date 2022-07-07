@@ -6,12 +6,19 @@ import HeaderInfo from './HeaderInfo';
 
 export default function LandingComponent(){
 
+    const styles = {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        marginRight: "7vw",
+        height: "2vh",
+    }
+
     return (
         <div className="home_landingComponent">
-            {/*<img src={homeHero} alt="home hero"/>*/}
             <div className="home_image"/>
             <div className="home_landingComponent_rightComponent">
-                <HeaderLogin/>
+                <HeaderLogin props={styles}/>
                 <Header/>
                 <HeaderInfo/>
             </div>

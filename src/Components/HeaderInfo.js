@@ -2,7 +2,11 @@ import React, { useState, useEffect} from 'react';
 import GiveButton from "./Buttons/GiveButton";
 import OrganizeButton from "./Buttons/OrganizeButton"
 import Decoration from "./Decorations/Decoration";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "./Firebase";
+
 export default function HeaderInfo(){
+    const [user, loading] = useAuthState(auth);
 
     return (
         <div className="header_info">
@@ -11,7 +15,7 @@ export default function HeaderInfo(){
             <div className="home_landingComponent_buttons">
                 <Decoration/>
                 <div className="home_landingComponent_container">
-                    <GiveButton/>
+                    {user ? <GiveButton/> : <></>}
                     <OrganizeButton/>
                 </div>
             </div>
