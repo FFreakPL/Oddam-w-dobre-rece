@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react';
 export default function Info() {
 
     return (
-        <div className="info">
+        <div name="info" className="info">
             <div className="info_container">
                 <div className="info_item">
                     <p className="info_item_number">10</p>

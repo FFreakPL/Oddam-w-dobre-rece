@@ -9,7 +9,7 @@ import Decoration from "./Decorations/Decoration";
 export default function StepsInfo() {
 
     return (
-        <div className="stepsInfo">
+        <div name="stepsInfo" className="stepsInfo">
             <div className="stepsInfo_container">
             <p className="stepsInfo_title">Wystarczą 4 proste kroki</p>
             <Decoration/>

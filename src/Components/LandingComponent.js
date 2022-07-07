@@ -2,9 +2,8 @@ import React, { useState, useEffect} from 'react';
 import Header from './Header';
 import HeaderLogin from './HeaderLogin';
 import HeaderInfo from './HeaderInfo';
-// import homeHero from "../assets/Home-Hero-Image-Small.jpg";
 
-export default function LandingComponent(){
+export default function LandingComponent({props}){
 
     const styles = {
         display: "flex",
@@ -15,7 +14,7 @@ export default function LandingComponent(){
     }
 
     return (
-        <div className="home_landingComponent">
+        <div name="landingComponent" className="home_landingComponent">
             <div className="home_image"/>
             <div className="home_landingComponent_rightComponent">
                 <HeaderLogin props={styles}/>

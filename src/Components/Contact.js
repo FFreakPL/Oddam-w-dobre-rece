@@ -5,7 +5,7 @@ import Decoration from "./Decorations/Decoration";
 export default function Contact() {
 
     return(
-        <div className="contact">
+        <div name="contact" className="contact">
             <div className="contact_background"></div>
             <div className="contact_container">
             <div className="contact_title">Skontaktuj się z nami</div>

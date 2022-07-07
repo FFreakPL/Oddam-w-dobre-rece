@@ -17,7 +17,6 @@ export default function LoginComponent(){
         if (user) navigate("/");
     },[user, loading])
 
-
     return(
     <div className="login">
                     <div className="login_title">Zaloguj się</div>

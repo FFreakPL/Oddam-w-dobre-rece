@@ -5,7 +5,7 @@ import Signature from "../assets/Signature.svg"
 export default function AboutUs(){
 
     return (
-        <div className="aboutUs">
+        <div name="aboutUs" className="aboutUs">
             <div className="aboutUs_container">
                 <div className="aboutUs_info">
                     <p className="aboutUs_info_title">O nas</p>
