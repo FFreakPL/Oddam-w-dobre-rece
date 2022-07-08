@@ -103,7 +103,7 @@ $seventh-color: #3C3C3C;
   }
 }
 @mixin LoginRegister {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,10 +112,10 @@ $seventh-color: #3C3C3C;
 
   &_header {
     display: flex;
-    width:100vw;
+    width:100%;
   }
   &_empty {
-    width:50vw;
+    width:50%;
   }
 
   &_title {
@@ -140,6 +140,8 @@ $seventh-color: #3C3C3C;
     }
   }
 }
+
+//outline: 1px solid red !important;
 
 #root {
   font-family: $primary-font;
@@ -179,16 +181,16 @@ input:-webkit-autofill {
     &_image {
     background-image: url("./assets/Home-Hero-Image.jpg");
     height: 86vh;
-    width: 50vw;
+    width: 50%;
     background-size: cover;
     background-position: right;
     }
     &_landingComponent {
     display: flex;
-    width: 100vw;
-    margin-top: 2vh;
+    width: 100%;
+
       &_rightComponent {
-      width: 50vw;
+      width: 50%;
       height: 86vh;
         p {
           font-size: 3.2vh;
@@ -217,10 +219,16 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center;
   height: 6vh;
-  width:50vw;
+  //width:100%;
 
   &_login {
     //Styled within React components: LandingPage, Login, Register
+    //display: flex;
+    //align-items: center;
+    //justify-content: flex-end;
+    //margin-right: 6vw;
+    //margin-top: 2vh;
+    //height: 2vh;
   }
 
   &_list {
@@ -247,7 +255,7 @@ input:-webkit-autofill {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 78vh;
+    height: 76vh;
     line-height: 3.3vh;
     margin-right: 7vw;
 
@@ -393,7 +401,7 @@ input:-webkit-autofill {
 //GiveThings
 .giveThings {
   height: 235px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -402,7 +410,7 @@ input:-webkit-autofill {
 //AboutUs
 .aboutUs {
   height: 75vh;
-  width: 100vw;
+  width: 100%;
 
   &_container {
     display: flex;
@@ -445,7 +453,7 @@ input:-webkit-autofill {
 
 //Contact
 .contact {
-  width:100vw;
+  width:100%;
   height: 85vh;
   position: relative;
 
@@ -453,7 +461,7 @@ input:-webkit-autofill {
     background-image: url("./assets/Background-Contact-Form.jpg");
     background-position: center;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: 85vh;
     position: absolute;
     top: 0;
@@ -465,7 +473,7 @@ input:-webkit-autofill {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       height: 85vh;
       background-color: white;
       opacity: 0.8;
@@ -481,7 +489,6 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 45vw;
     margin-left: 55vw;
   }
 
@@ -726,3 +733,7 @@ input:-webkit-autofill {
     }
   }
 }
+
+//*{
+//  outline: 1px solid red !important;
+//}

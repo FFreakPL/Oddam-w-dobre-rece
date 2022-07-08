@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import {useNavigate} from "react-router-dom";
 
-export default function Header() {
+export default function Header({styling}) {
     const navigate = useNavigate();
     const aboutUs = document.querySelector('.aboutUs');
     const info = document.querySelector('.info');
@@ -46,7 +46,7 @@ export default function Header() {
     }
 
     return (
-        <div className="header">
+        <div className="header" style={styling}>
             <ul className="header_list">
                 <li className="header_item" onClick={() => handleClick()}>Start</li>
                 <li className="header_item" onClick={()=> scrollToInfo()}>O co chodzi?</li>
