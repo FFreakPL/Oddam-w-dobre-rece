@@ -7,8 +7,11 @@ import GiveThings from "./GiveThings";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import BackToTop from "./Buttons/BackToTop";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "./Firebase";
 
 export default function Home(){
+    const [user, loading] = useAuthState(auth);
 
     return (
         <>

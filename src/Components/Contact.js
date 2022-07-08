@@ -1,10 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import Footer from './Footer';
 import Decoration from "./Decorations/Decoration";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "./Firebase";
 
 const CONTACT_URL = "https://fer-api.coderslab.pl/v1/portfolio/contact"
 
 export default function Contact() {
+    const [user, loading] = useAuthState(auth);
     const [name, setName] =useState("");
     const [nameError, setNameError] = useState("");
     const [email, setEmail] = useState("");
@@ -12,8 +15,8 @@ export default function Contact() {
     const [message, setMessage] = useState("");
     const [messageError, setMessageError] = useState("");
     const [formSent, setFormSent] = useState(false);
-    const [succesMessage1] = useState("Wiadomość została wysłana.");
-    const [succesMessage2] = useState("Wkrótce się skontaktujemy.");
+    const [successMessage1] = useState("Wiadomość została wysłana.");
+    const [successMessage2] = useState("Wkrótce się skontaktujemy.");
 
     //Wyłączenie domyślnej walidacji
     document.addEventListener('invalid', (function () {
@@ -80,7 +83,7 @@ export default function Contact() {
         })
         }
     }
-
+console.log(user)
 
     return(
         <div name="contact" className="contact">
@@ -92,10 +95,10 @@ export default function Contact() {
                     <div className="contact_succesMessages">
                         <div className="contact_succesMessages_message1"
                              style={{textAlign: "center", fontSize: "0.8vw", fontWeight: "600", color: "#28931F", marginBottom: "0.3vh"}}>
-                            <p>{succesMessage1}</p></div>
+                            <p>{successMessage1}</p></div>
                         <div className="contact_succesMessages_message2"
                              style={{textAlign: "center", fontSize: "0.8vw", fontWeight: "600", color: "#28931F", marginBottom: "0.3vh"}}>
-                            <p>{succesMessage2}</p></div>
+                            <p>{successMessage2}</p></div>
                     </div>
                 : <></>}
             <form className="contact_form" onSubmit={handleSubmit}>
@@ -117,6 +120,7 @@ export default function Contact() {
                         <input className="contact_form_data"
                                style={{borderBottom: (!emailError  ? "1px solid black" : "1px solid #FA4848")}}
                                type="email"
+                               placeholder={(user ? user.email : "")}
                                onChange={(e) => {
                                    e.preventDefault()
                                    handleEmailChange()
@@ -131,6 +135,7 @@ export default function Contact() {
                     <textarea className="contact_message_text"
                               style={{borderBottom: (!messageError  ? "1px solid black" : "1px solid red")}}
                               name="message"
+                              placeholder="Proszę wpisać co najmniej 120 znaków"
                               onChange={(e) => {
                                   e.preventDefault()
                                   isValidMessage()

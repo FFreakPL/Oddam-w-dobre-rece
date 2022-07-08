@@ -50,6 +50,20 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         alert(err.message);
     }
 };
+const sendData = async (dataName, data) => {
+    try {
+        const res = await logInWithEmailAndPassword(auth);
+        const user = res.user;
+        const data = res.data;
+        const dataCollection = collection(db, "data");
+        const upload = {dataName: dataName, data: "data" }
+        await addDoc(dataCollection, upload)
+    }
+    catch (err) {
+        console.error(err);
+        alert(err.message)
+    }
+}
 
 const sendPasswordReset = async (email) => {
     try {
@@ -66,6 +80,7 @@ const logout = () => {
 export {
     auth,
     db,
+    sendData,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
