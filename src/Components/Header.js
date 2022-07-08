@@ -3,39 +3,53 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import {useNavigate} from "react-router-dom";
 
 export default function Header({styling}) {
+    const [about, setAbout] = useState();
+    const [info, setInfo] = useState();
+    // const [org, setOrg] = useState();
+    const [contact, setContact] = useState();
     const navigate = useNavigate();
-    const aboutUs = document.querySelector('.aboutUs');
-    const info = document.querySelector('.info');
-    const organizations = document.querySelector('.organizations');
-    const contact = document.querySelector('.contact');
+
+    useEffect(() => {
+        setAbout(document.querySelector('.aboutUs').offsetTop);
+    },[about]);
+    useEffect(() => {
+        setInfo(document.querySelector('.info').offsetTop);
+    },[info]);
+    // useEffect(() => {
+    //     setOrg(document.querySelector('.organisations').offsetTop);
+    // },[org]);
+    useEffect(() => {
+        setContact(document.querySelector('.contact').offsetTop);
+    },[contact]);
 
     function handleClick() {
         navigate("/");
     }
-    const scrollToAboutUs = () => {
+
+    function scrollToAboutUs() {
         window.scrollTo({
-            top: aboutUs.offsetTop,
+            top: about,
             behavior: 'smooth',
         });
-    };
-    const scrollToInfo = () => {
+    }
+    function scrollToInfo() {
         window.scrollTo({
-            top: info.offsetTop,
+            top: info,
             behavior: 'smooth',
         });
-    };
-    // const scrollToOrganizations = () => {
+    }
+    // function scrollToOrganizations() {
     //     window.scrollTo({
-    //         top: organizations.offsetTop,
+    //         top: org,
     //         behavior: 'smooth',
-    //     });
-    // };
-    const scrollToContact = () => {
+    //     },[org]);
+    // }
+    function scrollToContact() {
         window.scrollTo({
-            top: contact.offsetTop,
+            top: contact,
             behavior: 'smooth',
         });
-    };
+    }
 
     const styles = {
         display: "flex",
