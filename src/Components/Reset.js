@@ -13,13 +13,15 @@ export default function Reset(){
         marginTop: "2vh",
         height: "2vh",
     }
-
+    const stylesWidth = {
+        width: "50%"
+    }
     return (
         <>
             <HeaderLogin props={styles}/>
             <div className="login_header">
                 <div className="login_empty"/>
-                <Header/>
+                <Header styling={stylesWidth}/>
             </div>
             <ResetComponent/>
         </>
