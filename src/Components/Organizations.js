@@ -1,13 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import Firebase from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth, db} from "./Firebase";
-import {collection, onSnapshot, query, orderBy, startAfter, limit, getDocs} from "firebase/firestore";
+import {auth, db, database} from "./Firebase";
+import {collection, onSnapshot} from "firebase/firestore";
 import Decoration from "./Decorations/Decoration";
 import Pagination from "./Pagination"
 
 export default function Organizations(){
-    // const [user, loading] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [name, setName] = useState("")
     const [organizations, setOrganizations] = useState([]);
     const [foundations, setFoundations] = useState([]);
