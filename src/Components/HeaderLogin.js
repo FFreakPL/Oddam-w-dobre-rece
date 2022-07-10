@@ -24,7 +24,7 @@ export default function HeaderLogin({props}){
 
     function handleGiveThings() {
         if(user) {
-            navigate("/loggedIn");
+            navigate("/stepsHome");
         } else {
             alert("ups coś poszło nie tak")
         }

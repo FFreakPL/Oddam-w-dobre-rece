@@ -8,7 +8,7 @@ export default function Pagination({recordsPerPage, totalRecords, paginate}){
         }
 
 
-    console.log(pageNumbers)
+    // console.log(pageNumbers)
     return (
         <nav className="pagination_nav">
             <ul className="pagination">
