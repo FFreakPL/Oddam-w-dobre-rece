@@ -7,6 +7,7 @@ import GiveThings from "./GiveThings";
 import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import BackToTop from "./Buttons/BackToTop";
+import Organizations from "./Organizations";
 import { useAuthState } from "react-firebase-hooks/auth";
 import {auth} from "./Firebase";
 
@@ -32,6 +33,9 @@ export default function Home(){
             </Element>
             <Element name="AboutUs">
                 <AboutUs/>
+            </Element>
+            <Element name="Organizations">
+                <Organizations/>
             </Element>
             <Element name="Contact">
                 <Contact/>

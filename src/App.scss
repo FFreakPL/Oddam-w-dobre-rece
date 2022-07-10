@@ -734,6 +734,76 @@ input:-webkit-autofill {
   }
 }
 
+
+//Organizations
+.organizations {
+  //height: 70vh;
+
+  &_title {
+    font-size: 3.2vh;
+    margin-top: 4vh;
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  &_wrapper {
+    display: flex;
+    width: 65%;
+    height: 6vh;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4vh;
+    margin-bottom: 4.8vh;
+  }
+    &_btn {
+      font-size: 1.25vw;
+      width: 10vw;
+      text-align: center;
+      padding: 1vw;
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid black;
+      }
+    }
+  &_info {
+    font-size: 1.15vw;
+    margin-bottom: 2vh;
+    width: 35vw;
+    text-align: center;
+    line-height: 2.5vh;
+  }
+  &_list {
+    font-family: $secondary-font;
+    font-weight: 300;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    &_container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 1.5vh;
+      border-bottom: 1px solid black;
+      margin-top: 1vh;
+    }
+    &_item {
+      font-size: 26px;
+
+      p {
+        font-size: 18px;
+      }
+    }
+    &_things {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
 //*{
 //  outline: 1px solid red !important;
 //}

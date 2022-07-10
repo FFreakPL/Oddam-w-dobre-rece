@@ -22,14 +22,24 @@ export default function HeaderLogin({props}){
         }
     }
 
+    function handleGiveThings() {
+        if(user) {
+            navigate("/loggedIn");
+        } else {
+            alert("ups coś poszło nie tak")
+        }
+    }
+
     function backToHome() {
         navigate("/");
     }
+
     return (
         <div className="header_login" style={props}>
             {user ? <div className="header_loggedIn" style={{fontSize: "0.75vw", marginRight: "1vw"}}>Cześć {user.email}</div> : <></>}
-            <button type="button" className="btn_login" onClick={() => handleLogin()}>Zaloguj</button>
-            <button type="button" className="btn_register" onClick={() => handleRegister()}>Załóż konto</button>
+            {user ? <button type="button" className="btn_login" onClick={() => handleGiveThings()}>Oddaj rzeczy</button>
+                : <button type="button" className="btn_login" onClick={() => handleLogin()}>Zaloguj</button> &&
+                <button type="button" className="btn_register" onClick={() => handleRegister()}>Załóż konto</button>}
             { user ? <button type="button" className="btn_logout" onClick={() => logout() & backToHome()}>Wyloguj się</button>
             : <></>}
         </div>

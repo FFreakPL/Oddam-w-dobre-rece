@@ -83,7 +83,7 @@ export default function Contact() {
         })
         }
     }
-console.log(user)
+
 
     return(
         <div name="contact" className="contact">

@@ -12,6 +12,8 @@ import {
     getDocs,
     collection,
     where,
+    doc,
+    getDoc,
     addDoc,
 } from "firebase/firestore";
 const firebaseConfig = {
@@ -50,13 +52,11 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         alert(err.message);
     }
 };
-const sendData = async (dataName, data) => {
+
+const sendData = async (name) => {
     try {
-        const res = await logInWithEmailAndPassword(auth);
-        const user = res.user;
-        const data = res.data;
-        const dataCollection = collection(db, "data");
-        const upload = {dataName: dataName, data: "data" }
+        const dataCollection = collection(db, "locals");
+        const upload = {name: name}
         await addDoc(dataCollection, upload)
     }
     catch (err) {

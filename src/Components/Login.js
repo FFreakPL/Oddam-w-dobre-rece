@@ -16,6 +16,7 @@ export default function Login(){
     const stylesWidth = {
         width: "50%"
     }
+
     return (
         <>
             <HeaderLogin props={styles}/>
