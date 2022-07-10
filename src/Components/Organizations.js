@@ -1,10 +1,12 @@
 import React, { useState, useEffect} from 'react';
+import ReactPaginate from 'react-paginate';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Firebase from './Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
 import {auth, db} from "./Firebase";
 import {collection, onSnapshot, query, orderBy, startAfter, limit, getDocs} from "firebase/firestore";
 import Decoration from "./Decorations/Decoration";
+import Pagination from "./Pagination"
 
 export default function Organizations(){
     const [user, loading] = useAuthState(auth);
@@ -37,6 +39,18 @@ export default function Organizations(){
             return a.name.localeCompare(b.name)})
     },[locals])
 
+    //Pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(3);
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    const currentFoundations = foundations.slice(indexOfFirstRecord , indexOfLastRecord)
+    const currentOrganizations = organizations.slice(indexOfFirstRecord , indexOfLastRecord)
+    const currentLocals = locals.slice(indexOfFirstRecord , indexOfLastRecord)
+
+    function paginate(pageNumber){
+        setCurrentPage(pageNumber)
+    }
 
     return (
         <div className="organizations">
@@ -60,36 +74,49 @@ export default function Organizations(){
                 <div className="organizations_info">W naszej bazie znajdziesz listę zweryfikowanych Fundacji,
                     z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</div>
                 {name === "foundations" ?
-                <ul className="organizations_list">
-                    {foundations.map((foundation) =>
+                    <><ul className="organizations_list">
+                    {currentFoundations.map((foundation) =>
                         <div className="organizations_list_container" key={foundation.name}>
                             <li key={foundation.name} className="organizations_list_item">
-                                {foundation.name}<p>{foundation.info}</p>
+                                Fundacja "{foundation.name}"<p>{foundation.info}</p>
                             </li>
-                            <div className="organizations_list_things">{foundation.things}</div></div>)}
-                </ul>
+                            <div className="organizations_list_things">{foundation.things}</div>
+                        </div>)}
+                </ul>{foundations.length > recordsPerPage &&
+                        <Pagination recordsPerPage={recordsPerPage}
+                                 totalRecords={foundations.length}
+                                    paginate={paginate}/>}</>
                 : <></>}
+
                 {name === "organizations" ?
-                    <ul className="organizations_list">
-                        {organizations.map((organization) =>
+                    <><ul className="organizations_list">
+                        {currentOrganizations.map((organization) =>
                             <div className="organizations_list_container" key={organization.name}>
                                 <li key={organization.name} className="organizations_list_item">
-                                    {organization.name}<p>{organization.info}</p>
+                                    Organizacja "{organization.name}"<p>{organization.info}</p>
                                 </li>
                                 <div className="organizations_list_things">{organization.things}</div>
                             </div>)}
-                    </ul>
+                    </ul>{organizations.length > recordsPerPage &&
+                        <Pagination recordsPerPage={recordsPerPage}
+                                     totalRecords={organizations.length}
+                                     paginate={paginate}/>}</>
                 : <></>}
+
                 {name === "locals" ?
-                <ul className="organizations_list">
-                    {locals.map((local) =>
-                        <div className="organizations_list_container" key={locals.name}>
+                <><ul className="organizations_list">
+                    {currentLocals.map((local) =>
+                        <div className="organizations_list_container" key={local.name}>
                             <li key={local.name} className="organizations_list_item">
-                                {local.name}<p>{local.info}</p>
+                               Zbiórka "{local.name}"<p>{local.info}</p>
                             </li>
                             <div className="organizations_list_things">{local.things}</div></div>)}
-                </ul>
+                </ul>{locals.length > recordsPerPage &&
+                    <Pagination recordsPerPage={recordsPerPage}
+                                 totalRecords={locals.length}
+                                 paginate={paginate}/>}</>
                 : <></>}
+
             </div>
         </div>
     )
