@@ -16,6 +16,7 @@ import {
     getDoc,
     addDoc,
 } from "firebase/firestore";
+import {getDatabase} from "firebase/database";
 const firebaseConfig = {
     apiKey: "AIzaSyChz9VCsVuyb7bWzM3niEfkw_yMJ9vr2_g",
     authDomain: "giveingoodhands-12a02.firebaseapp.com",
@@ -28,6 +29,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const database = getDatabase();
 
 
 const logInWithEmailAndPassword = async (email, password) => {
@@ -42,9 +44,9 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        const userCollection = collection(db, "users");
-        const payload = {email: email, password: password, userType: "normal"}
-        await addDoc(userCollection, payload)
+        // const userCollection = collection(db, "users");
+        // const payload = {email: email, password: password, userType: "normal"}
+        // await addDoc(userCollection, payload)
 
     }
     catch (err) {
@@ -52,18 +54,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         alert(err.message);
     }
 };
-
-const sendData = async (name) => {
-    try {
-        const dataCollection = collection(db, "locals");
-        const upload = {name: name}
-        await addDoc(dataCollection, upload)
-    }
-    catch (err) {
-        console.error(err);
-        alert(err.message)
-    }
-}
 
 const sendPasswordReset = async (email) => {
     try {
@@ -80,7 +70,6 @@ const logout = () => {
 export {
     auth,
     db,
-    sendData,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
