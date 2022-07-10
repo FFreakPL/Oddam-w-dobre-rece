@@ -749,6 +749,7 @@ input:-webkit-autofill {
     flex-direction: column;
     align-items: center;
     height: 100%;
+    margin-bottom: 3rem;
   }
   &_wrapper {
     display: flex;
@@ -775,7 +776,7 @@ input:-webkit-autofill {
     margin-bottom: 2vh;
     width: 35vw;
     text-align: center;
-    line-height: 2.5vh;
+    line-height: 2vw;
   }
   &_list {
     font-family: $secondary-font;
