@@ -11,7 +11,6 @@ export default function Step1() {
         "inne"])
     const [selectedThing, setSelectedThing] = useState("")
     const {setState } = useContext(DataContext);
-
     function handleChange(e) {
         if (e.target.value === things) {
             setSelectedThing("");
@@ -19,21 +18,6 @@ export default function Step1() {
             setSelectedThing(e.target.value);
         }
     }
-
-    // const handleChange = ({ target: { item } }) => {
-    //     if (things.includes(item)) {
-    //         setThings(prev => prev.filter(el => el !== item))
-    //
-    //         return;
-    //     }
-    //     console.log(item);
-    //     setThings(prev => ([
-    //         ...prev,
-    //         item
-    //     ]))
-    // }
-
-
     const handleNext = () => {
         setState(prev => ({
             ...prev,

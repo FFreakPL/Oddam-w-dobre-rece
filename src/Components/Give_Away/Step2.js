@@ -6,7 +6,6 @@ export default function Step2() {
     const [bags, setBags] = useState([1,2,3,4,5])
     const [selectedBag, setSelectedBag] = useState()
     const { state, setState } = useContext(DataContext);
-
     const handleChange = ({target : {value}}) => {
         if (bags.includes(value)) {
             setSelectedBag(value)
@@ -14,7 +13,6 @@ export default function Step2() {
         }
         setSelectedBag(value)
     }
-
     const handleNext = () => {
         setState(prev => ({
             ...prev,

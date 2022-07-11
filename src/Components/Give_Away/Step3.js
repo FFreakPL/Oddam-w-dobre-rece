@@ -19,7 +19,6 @@ export default function Step1() {
     const [selectedHelp, setSelectedHelp] = useState([])
     const [specificLocation, setSpecificLocation] = useState("")
     const { setState } = useContext(DataContext);
-
     const handleChangeLocation = ({target : {value}}) => {
         if (location.includes(value)) {
             setSelectedLocation(value)
@@ -27,7 +26,6 @@ export default function Step1() {
         }
         setSelectedLocation(value)
     }
-
     const handleChangeHelp = (e) => {
         let updatedData = [...selectedHelp];
         if (e.target.checked) {
@@ -37,7 +35,6 @@ export default function Step1() {
         }
         setSelectedHelp(updatedData);
     };
-
     function handleChangeSpecificLocation(e) {
         if (e.target.value === specificLocation) {
             setSpecificLocation("");
@@ -45,7 +42,6 @@ export default function Step1() {
             setSpecificLocation(e.target.value);
         }
     }
-
     const handleNext = () => {
         setState(prev => ({
             ...prev,
@@ -61,7 +57,6 @@ export default function Step1() {
             step: prev.step - 1
         }))
     }
-
     return (
         <div className="step">
             <div className="step_counter">Krok 3/4</div>
