@@ -961,6 +961,11 @@ input:-webkit-autofill {
   &_title {
     font-size:36px;
   }
+  &_subTitle1 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 1rem;
+  }
   &_container {
     height:600px;
     display: flex;
@@ -973,6 +978,15 @@ input:-webkit-autofill {
     justify-content: space-evenly;
     height: 100%;
 
+    &_step3 {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+      width: 39vw;
+      flex-wrap: wrap;
+      height: 15vh;
+      align-items: center;
+    }
   }
   &_item {
     font-size: 24px;
@@ -1044,7 +1058,8 @@ input:-webkit-autofill {
   &_select {
     width: 300px;
     background-color: transparent;
-    height: 49px;
+    height: 65px;
+    margin-top: 20px;
     text-align: center;
 
     &_container {
