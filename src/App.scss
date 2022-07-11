@@ -948,12 +948,15 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  margin-left: 142px;
+  //justify-content: center;
+  padding-left: 142px;
+  background-image: url("./assets/Background-Form.jpg");
 
   &_counter {
-    height: 138px;
-    font-size: 24px
+    font-family: $primary-font-light;
+    height: 96px;
+    font-size: 24px;
+    margin-top: 2rem;
   }
   &_title {
     font-size:36px;
@@ -962,14 +965,176 @@ input:-webkit-autofill {
     height:600px;
     display: flex;
     flex-direction: column;
+    //justify-content: space-evenly;
+  }
+  &_items {
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    height: 100%;
+
   }
   &_item {
     font-size: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    //&_checkbox {
+    //  &_element {
+    //    margin-bottom: 20px;
+    //    background-color: transparent;
+    //    border: 0.75px solid black;
+    //    height: 40px;
+    //  }
+    //}
+
+    &_firstOne {
+      font-size: 24px;
+      font-family: $primary-font-light;
+    }
+
+    span {
+      font-family: $primary-font-light;
+      font-size: 24px;
+    }
   }
-  input {
+  input[type="radio"] {
     margin-right: 30px;
     width: 40px;
     height: 40px;
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border: 0.75px solid black;
+      position: absolute;
+      background-color: white;
+    }
+
+    &:checked {
+      &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border: 0.75px solid black;
+        position: absolute;
+        background-color: $fifth-color;
+      }
+    }
   }
+  &_button {
+    background-color: transparent;
+    border: 0.75px solid black;
+    font-family: $primary-font-light;
+    font-size: 24px;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    width: 12vw;
+    margin-right: 3vw;
+  }
+  &_buttons{
+    &_container {
+      display: flex;
+      //width: 60%;
+      justify-content: flex-start;
+    }
+  }
+  &_select {
+    width: 300px;
+    background-color: transparent;
+    height: 49px;
+    text-align: center;
+
+    &_container {
+      display: flex;
+      align-items: center;
+      margin-top: 57px;
+
+      p {
+        margin-right: 26px;
+      }
+    }
+  }
+  &_localisationSpecific {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    &_input {
+      margin-bottom: 20px;
+      background-color: transparent;
+      border: 0.75px solid black;
+      height: 40px;
+    }
+  }
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Some browsers will not display the caret when using calc, so we put the fallback first */
+  background: url("./assets/br_down.png") transparent no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+}
+/*For IE*/
+select::-ms-expand { display: none; }
+
+//ul {
+//  padding: 0;
+//  margin: 0;
+//  clear: both;
+//}
+//
+//li{
+//  list-style-type: none;
+//  list-style-position: outside;
+//  padding: 10px;
+//  float: left;
+//}
+//
+//input[type="checkbox"]:not(:checked),
+//input[type="checkbox"]:checked {
+//  position: absolute;
+//  left: -9999%;
+//}
+//
+//input[type="checkbox"] + label {
+//  display: inline-block;
+//  padding: 10px;
+//  cursor: pointer;
+//  border: 1px solid black;
+//  color: black;
+//  background-color: white;
+//  margin-bottom: 10px;
+//}
+//
+//input[type="checkbox"]:checked + label {
+//  border: 1px solid white;
+//  color: white;
+//  background-color: black;
+//}
+
+input[type="checkbox"] {
+  /* hide the inputs */
+  opacity: 0;
+}
+input[type="checkbox"] + label {
+  /* keep pointer so that you get the little hand showing when you are on a button */
+  cursor: pointer;
+  /* the following are the styles */
+  font-size: 24px;
+  font-family: $primary-font-light;
+  padding: 11px 26px;
+  margin: 24px 24px 24px 0;
+  border: 0.75px solid $seventh-color;
+  background: transparent;
+  color: black;
+  border-radius: 3px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0);
+}
+input[type="checkbox"]:checked + label{
+  /* style for the checked/selected state */
+  background-color: $fifth-color;
+  border: 0.75px solid $seventh-color;
 }
