@@ -3,7 +3,7 @@ import Header from './Header';
 import HeaderLogin from './HeaderLogin';
 import HeaderForm from './HeaderForm';
 
-export default function LandingComponent({props}){
+export default function LandingComponent(){
 
     const styles = {
         display: "flex",
