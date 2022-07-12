@@ -27,6 +27,7 @@ export default function Form_Step2() {
         }))
     }
     console.log(state);
+    console.log(selectedBag)
     return (
         <div className="step">
             <div className="step_counter">Krok 2/4</div>

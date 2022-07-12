@@ -19,8 +19,10 @@ export const DataContext = React.createContext({})
 export default function Form_Steps_Home(){
     const [user, loading] = useAuthState(auth);
     const [state, setState] = useState({
-        step: 1
+        step: 1,
     })
+
+
     const getComponent = () => {
         switch (state.step) {
             case 1:

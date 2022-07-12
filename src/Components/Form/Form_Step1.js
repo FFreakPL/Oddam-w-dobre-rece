@@ -19,17 +19,17 @@ export default function Form_Step1() {
         }
     }
     // const handleChange = ({ target: { name } }) => {
-//         if (things.includes(name)) {
-//             setThings(prev => prev.filter(el => el !== name))
-//
-//             return;
-//         }
-//
-//         setThings(prev => ([
-//             ...prev,
-//             name
-//         ]))
-//     }
+    //     if (things.includes(name)) {
+    //         setThings(prev => prev.filter(el => el !== name))
+    //
+    //         return;
+    //     }
+    //
+    //     setThings(prev => ([
+    //         ...prev,
+    //         name
+    //     ]))
+    // }
     const handleNext = () => {
         setState(prev => ({
             ...prev,
@@ -58,7 +58,7 @@ export default function Form_Step1() {
                     ))}
                 </div>
             </div>
-            {things.length !== 0 && <FormButton props={handleNext} name={"Dalej"}/>}
+            {selectedThing.length !== 0 && <FormButton props={handleNext} name={"Dalej"}/>}
         </div>
     )
 }

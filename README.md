@@ -4,8 +4,8 @@ You Can choose what to give, where it should be send and even send message using
 the stuff from You:)
 
 `HomePage`
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178389771-1f3aef85-f9ab-43fb-9df3-116ce44e9bcb.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392376-5614ba02-32b1-434d-b447-91dc6604e731.png"></p>
+<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178389771-1f3aef85-f9ab-43fb-9df3-116ce44e9bcb.png">
+<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392376-5614ba02-32b1-434d-b447-91dc6604e731.png"></p>
 <p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392379-531f05b0-6e8e-44ea-9e86-ed06fe03bb95.png"></p>
 
 `Fetched data from Firestore`
@@ -25,10 +25,10 @@ the stuff from You:)
 `Form component`
 
 <p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392387-5790e00b-f586-42c3-9f5f-795536c4a337.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392393-10670389-8191-46f6-90e3-831a21f18ca0.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392395-96985ff1-a0bd-48fd-9ac2-7693d6f8ef70.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392396-31bf65cc-6df1-4896-a54a-111fbfabdd50.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392399-4064a5f5-2551-405e-a9bf-1b3c85efc8d0.png"></p>
+<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392393-10670389-8191-46f6-90e3-831a21f18ca0.png">
+<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392395-96985ff1-a0bd-48fd-9ac2-7693d6f8ef70.png">
+<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392396-31bf65cc-6df1-4896-a54a-111fbfabdd50.png">
+<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392399-4064a5f5-2551-405e-a9bf-1b3c85efc8d0.png"></p>
 
 ## Running APP (almost done...)
 <p>https://giveingoodhands.vercel.app</p>
