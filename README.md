@@ -1,5 +1,7 @@
 # GiveInGoodHands
-PlanYourRide is the React App that makes it easy to see the weather forecast on your starred segments in Strava.
+GiveInGoodHands is the React App that makes possible to give people with special needs stuff You do not need any more:)
+You Can choose what to give, where it should be send and even send message using custom form where and when post service can 
+the stuff from You:)
 
 `HomePage`
 <p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178389771-1f3aef85-f9ab-43fb-9df3-116ce44e9bcb.png"></p>
