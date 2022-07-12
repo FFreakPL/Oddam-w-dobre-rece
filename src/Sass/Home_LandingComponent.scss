@@ -1,0 +1,78 @@
+//Top component
+.App {
+  .home{
+    &_image {
+      background-image: url("../assets/Home-Hero-Image.jpg");
+      height: 86vh;
+      width: 50%;
+      background-size: cover;
+      background-position: right;
+    }
+    &_landingComponent {
+      display: flex;
+      width: 100%;
+
+      &_rightComponent {
+        width: 50%;
+        height: 86vh;
+        p {
+          font-size: 3.2vh;
+          text-align: center;
+        }
+      }
+      &_buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      &_container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-left: 4vw;
+        margin-right: 4vw;
+        margin-top: 4vh;
+        width: 100%;
+      }
+    }
+  }
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 7vw;
+    margin-left: 7vw;
+  }
+
+  &_item {
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    font-size: 1.5vh;
+
+    &:hover {
+      animation: hoverBorder .3s ease forwards;
+      cursor: pointer;
+    }
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 76vh;
+    line-height: 3.3vh;
+    margin-right: 7vw;
+
+    p {
+      padding: 0.5vh;
+    }
+  }
+}

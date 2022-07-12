@@ -1,0 +1,182 @@
+//Steps
+.step {
+  height: 883px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 142px;
+  background-image: url("../assets/Background-Form.jpg");
+
+  &_counter {
+    font-family: $primary-font-light;
+    height: 96px;
+    font-size: 24px;
+    margin-top: 2rem;
+  }
+  &_title {
+    font-size:36px;
+    font-weight: 600;
+  }
+  &_subTitle1 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 1rem;
+  }
+  &_subTitle2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 2rem;
+  }
+  &_container {
+    height:600px;
+    display: flex;
+    flex-direction: column;
+  }
+  &_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+
+    &_step3 {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+      width: 39vw;
+      flex-wrap: wrap;
+      height: 15vh;
+      align-items: center;
+    }
+  }
+  &_item {
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &_firstOne {
+      font-size: 24px;
+      font-family: $primary-font-light;
+    }
+
+    span {
+      font-family: $primary-font-light;
+      font-size: 24px;
+    }
+  }
+  input[type="radio"] {
+    margin-right: 30px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    &:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      border: 0.75px solid black;
+      position: absolute;
+      background-color: white;
+    }
+
+    &:checked {
+      &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        border: 0.75px solid black;
+        position: absolute;
+        background-color: $fifth-color;
+      }
+    }
+  }
+  &_button {
+    background-color: transparent;
+    border: 0.75px solid black;
+    font-family: $primary-font-light;
+    font-size: 24px;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    width: 12vw;
+    margin-right: 3vw;
+  }
+  &_buttons{
+    &_container {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+  &_select {
+    width: 300px;
+    background-color: transparent;
+    height: 65px;
+    margin-top: 20px;
+    text-align: center;
+
+    &_container {
+      display: flex;
+      align-items: center;
+      margin-top: 57px;
+
+      p {
+        margin-right: 26px;
+      }
+    }
+  }
+  &_localisationSpecific {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    &_input {
+      margin-bottom: 20px;
+      background-color: transparent;
+      border: 0.75px solid black;
+      height: 40px;
+    }
+  }
+  &_form{
+
+    &_container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &_left,&_right {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+
+      &_inputs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &_street,
+        &_city,
+        &_postalCode,
+        &_phoneNumber,
+        &_date,
+        &_hour {
+          background-color: transparent;
+          border: 0.75px solid black;
+          height: 40px;
+          width: 256px;
+          font-size: 1.2rem;
+          font-family: $primary-font-light;
+        }
+        &_comment {
+          background-color: transparent;
+          border: 0.75px solid black;
+          height: 80px;
+          width: 256px;
+          font-size: 1.2rem;
+          font-family: $primary-font-light;
+        }
+        label {
+          font-size: 24px;
+          font-family: $primary-font-light;
+        }
+      }
+    }
+  }
+}

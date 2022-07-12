@@ -1,15 +1,15 @@
 import React, { useState, useEffect} from 'react';
 import { Element } from "react-scroll";
-import LandingComponent from "./LandingComponent";
-import Info from "./Info";
-import StepsInfo from "./StepsInfo";
-import GiveThings from "./GiveThings";
-import AboutUs from "./AboutUs";
-import Contact from "./Contact";
-import BackToTop from "./Buttons/BackToTop";
-import Organizations from "./Organizations";
+import Home_LandingComponent from "./Home_LandingComponent";
+import Home_Info from "./Home_Info";
+import Home_StepsInfo from "./Home_StepsInfo";
+import Home_GiveThings from "./Home_GiveThings";
+import Home_AboutUs from "./Home_AboutUs";
+import Home_Contact from "./Home_Contact";
+import Home_Button_BackToTop from "./Home_Button_BackToTop";
+import Home_Organizations from "./Home_Organizations";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth} from "./Firebase";
+import {auth} from "./Utilities/Utilities_Firebase";
 
 export default function Home(){
     const [user, loading] = useAuthState(auth);
@@ -17,28 +17,28 @@ export default function Home(){
     return (
         <>
             <Element name="BackToTop">
-                <BackToTop/>
+                <Home_Button_BackToTop/>
             </Element>
             <Element name="Homepage">
-                <LandingComponent/>
+                <Home_LandingComponent/>
             </Element>
             <Element name="Info">
-                <Info/>
+                <Home_Info/>
             </Element>
             <Element name="StepsInfo">
-                <StepsInfo/>
+                <Home_StepsInfo/>
             </Element>
             <Element name="GiveThings">
-                <GiveThings/>
+                <Home_GiveThings/>
             </Element>
             <Element name="AboutUs">
-                <AboutUs/>
+                <Home_AboutUs/>
             </Element>
             <Element name="Organizations">
-                <Organizations/>
+                <Home_Organizations/>
             </Element>
             <Element name="Contact">
-                <Contact/>
+                <Home_Contact/>
             </Element>
         </>
     )

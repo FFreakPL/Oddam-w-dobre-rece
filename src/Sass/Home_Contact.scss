@@ -1,0 +1,95 @@
+//Home_Contact
+.contact {
+  width:100%;
+  height: 85vh;
+  position: relative;
+
+  &_background {
+    background-image: url("../assets/Background-Contact-Form.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 85vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 85vh;
+      background-color: white;
+      opacity: 0.8;
+      z-index: -1;
+    }
+  }
+  &_title {
+    font-size: 3.2vh;
+  }
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 55vw;
+  }
+
+  &_form {
+    &_container {
+      display: flex;
+      margin-top: 4vh;
+      width: 31vw;
+      justify-content: space-between;
+    }
+    &_nameAndEmail {
+      //@include afterLine;
+      width: 15vw;
+    }
+
+    &_data {
+      border: none;
+      background-color: transparent;
+      font-size: 1.5vh;
+      font-family: $primary-font;
+      color: $seventh-color;
+      opacity: 0.4;
+    }
+    &_wrapper {
+      margin-top: 4vh;
+      display: flex;
+      justify-content: flex-end;
+    }
+    &_title {
+      font-size: 1.4vh;
+      font-weight: 600;
+      margin-bottom: 2vh;
+    }
+    &_button {
+      font-family: $primary-font-light;
+      font-size: 1.5vh;
+      background-color: transparent;
+      border: 1px solid black;
+      padding: 1rem 3rem 1rem 3rem;
+    }
+  }
+  &_message {
+    //@include afterLine;
+    margin-top: 4vh;
+
+    &_text {
+      border: none;
+      width: 100%;
+      height: 9vh;
+      background-color: transparent;
+      font-size: 1.5vh;
+      font-family: $primary-font;
+      color: $seventh-color;
+      opacity: 0.4;
+    }
+  }
+}

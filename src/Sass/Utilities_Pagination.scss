@@ -1,0 +1,21 @@
+//Utilities_Pagination
+.pagination {
+  display: flex;
+
+  &_nav {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_page {
+    font-size: 1.5vh;
+    padding: 1vh;
+    margin: 3vh 1vw 1vh 1vw;
+
+    &:hover {
+      border: 1px solid black;
+      cursor: pointer;
+    }
+  }
+}

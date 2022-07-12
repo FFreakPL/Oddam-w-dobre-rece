@@ -1,0 +1,11 @@
+#root {
+  font-family: $primary-font;
+  color: $seventh-color;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px $third-color inset;
+}
+.hidden {
+  display: none;
+}
+//outline: 1px solid red !important;

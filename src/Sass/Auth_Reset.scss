@@ -1,0 +1,63 @@
+//Auth_Reset
+.reset {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $third-color;
+    margin-top: 5vh;
+    padding: 3vh 3vw 3vh 3vw;
+    width: 15vw;
+    height: 8vh;
+
+    &_email {
+      @include afterLine;
+    }
+  }
+  &_title {
+    font-size: 2.1vw;
+  }
+
+  &_textBox {
+    background-color: transparent;
+    border: none;
+    height: 3vh;
+    width: 100%;
+
+    &_title{
+      font-weight: 600;
+      margin-bottom: 1vh;
+    }
+  }
+
+  &_btn {
+    font-family: $primary-font;
+    border: 1px solid black;
+    padding: 1vh;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+
+    &_container {
+      display: flex;
+      flex-direction: column;
+      width: 26vw;
+      height: 8vh;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3vh;
+    }
+  }
+  &_register {
+    a {
+      color: black;
+    }
+  }
+}

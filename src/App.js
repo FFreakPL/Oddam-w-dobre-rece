@@ -1,13 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.scss';
 import Home from './Components/Home';
-import Local from './Components/Local';
-import LoggedIn from './Components/LoggedIn';
-import Login from './Components/Login';
-import Reset from './Components/Reset';
-import Organizations from './Components/Organizations';
-import Register from './Components/Register';
-import StepsHome from './Components/StepsHome';
+import Auth_Login from './Components/Auth/Auth_Login';
+import Auth_Reset from './Components/Auth/Auth_Reset';
+import Home_Organizations from './Components/Home_Organizations';
+import Auth_Register from './Components/Auth/Auth_Register';
+import Form_Steps_Home from './Components/Form/Form_Steps_Home';
 
 function App() {
   return (
@@ -15,13 +13,11 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/local" element={<Local/>}/>
-          <Route exact path="/loggedIn" element={<LoggedIn/>}/>
-          <Route exact path="/login" element={<Login/>}/>
-          <Route exact path="/reset" element={<Reset/>}/>
-          <Route exact path="/organizations" element={<Organizations/>}/>
-          <Route exact path="/register" element={<Register/>}/>
-          <Route exact path="/stepsHome" element={<StepsHome/>}/>
+          <Route exact path="/login" element={<Auth_Login/>}/>
+          <Route exact path="/reset" element={<Auth_Reset/>}/>
+          <Route exact path="/organizations" element={<Home_Organizations/>}/>
+          <Route exact path="/register" element={<Auth_Register/>}/>
+          <Route exact path="/stepsHome" element={<Form_Steps_Home/>}/>
            </Routes>
       </Router>
     </div>

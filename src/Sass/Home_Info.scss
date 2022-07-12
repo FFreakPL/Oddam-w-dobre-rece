@@ -1,0 +1,39 @@
+//Home_Info
+.info {
+  background-image: url("../assets/Info_Background.png");
+  height: 33vh;
+
+  &_container {
+    display: flex;
+    height:100%;
+    justify-content: space-evenly;
+  }
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+    width: 18%;
+
+    &_number {
+      font-family: $primary-font-light;
+      font-size: 7.5vh;
+    }
+
+    &_title {
+      text-transform: uppercase;
+      font-size: 1.55vh;
+    }
+
+    &_description {
+      font-family: $secondary-font;
+      font-size: 1.35vh;
+      font-weight: 300;
+      line-height: 2.25vh;
+    }
+  }
+}

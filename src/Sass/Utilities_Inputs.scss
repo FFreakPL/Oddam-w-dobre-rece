@@ -1,0 +1,29 @@
+//Input styles
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("../assets/br_down.png") transparent no-repeat calc(100% - 10px) !important;
+}
+
+select::-ms-expand { display: none; }
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+input[type="checkbox"] + label {
+  cursor: pointer;
+  font-size: 24px;
+  font-family: $primary-font-light;
+  padding: 11px 26px;
+  margin: 24px 24px 24px 0;
+  border: 0.75px solid $seventh-color;
+  background: transparent;
+  color: black;
+  border-radius: 3px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0);
+}
+input[type="checkbox"]:checked + label{
+  background-color: $fifth-color;
+  border: 0.75px solid $seventh-color;
+}

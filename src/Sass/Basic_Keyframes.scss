@@ -1,0 +1,28 @@
+//Keyframes:
+@keyframes hoverBorder {
+  from {
+    border: 1px solid transparent;
+  }
+  to {
+    border: 1px solid $seventh-color;
+  }
+}
+@keyframes hoverLogin {
+  from {
+    border: 1px solid transparent;
+  }
+  to {
+    border: 1px solid $fifth-color;
+  }
+}
+@keyframes BackToTop {
+  0%{
+    transform: translateY(0vh);
+  }
+  50%{
+    transform: translateY(2.5vh);
+  }
+  100%{
+    transform: translateY(0vh);
+  }
+}

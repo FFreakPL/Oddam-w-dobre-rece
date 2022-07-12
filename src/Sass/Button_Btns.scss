@@ -1,0 +1,23 @@
+.btn {
+  &_login {
+    @include btns;
+  }
+  &_register {
+    margin-left: 1vw;
+    @include btns;
+  }
+  &_logout {
+    margin-left: 1vw;
+    @include btns;
+  }
+  &_give {
+    @include pseudoButtons;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &_organize {
+    @include pseudoButtons;
+  }
+}
