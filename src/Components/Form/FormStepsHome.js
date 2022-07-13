@@ -34,7 +34,6 @@ export default function FormStepsHome(){
     }
     const [state, setState] = useState(data)
 
-
     const getComponent = () => {
         switch (state.step) {
             case 1:

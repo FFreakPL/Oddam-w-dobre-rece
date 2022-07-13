@@ -4,6 +4,7 @@ import {DataContext} from "./FormStepsHome";
 
 export default function FormStep3() {
     const { state, setState } = useContext(DataContext);
+    const [step, setStep] = useState(DataContext)
     const location = [
         "Poznań",
         "Warszawa",
@@ -42,6 +43,7 @@ export default function FormStep3() {
         console.log(specific)
         console.log(state.specificLocation)
     }
+
     const handleNext = () => {
         setState(prev => ({
             ...prev,
@@ -60,7 +62,11 @@ export default function FormStep3() {
             step: prev.step - 1
         }))
     }
-    console.log(state);
+
+    function showAlert(){
+        return alert("Podaj lokalizację i wybierz komu chcesz pomóc!")
+    }
+
     return (
         <div className="step">
             <div className="step_counter">Krok 3/4</div>
@@ -108,7 +114,9 @@ export default function FormStep3() {
 
                 <div className="step_buttons_container">
                     <FormButton props={handleBack} name={"Wstecz"}/>
-                    <FormButton props={handleNext} name={"Dalej"}/>
+                    {((selectedLocation !== `—— wybierz ——` || specific) && selectedHelp.length > 0)
+                    ? <FormButton props={handleNext} name={"Dalej"}/>
+                    : <FormButton props={showAlert} name={"Dalej"}/>}
                 </div>
         </div>
     )

@@ -29,9 +29,20 @@ export default function FormStep2() {
             step: prev.step - 1
         }))
     }
+    function valigation(){
+        const errors = [];
+        if(bags !== `—— wybierz ——`) {
+            return true
+        } else {
+            errors.push("Podaj ilość worków!")
+        }
+    }
 
-    console.log(state.specificLocation)
+    function validation(){
+        return alert("Podaj ilość worków!")
+    }
     return (
+
         <div className="step">
             <div className="step_counter">Krok 2/4</div>
              <div className="step_container">
@@ -55,7 +66,9 @@ export default function FormStep2() {
             </div>
             <div className="step_buttons_container">
                 <FormButton props={handleBack} name={"Wstecz"}/>
-                <FormButton props={handleNext} name={"Dalej"}/>
+                {selectedBag !== `—— wybierz ——`
+                    ? <FormButton props={handleNext} name={"Dalej"}/>
+                    : <FormButton props={validation} name={"Dalej"}/>}
             </div>
         </div>
     )

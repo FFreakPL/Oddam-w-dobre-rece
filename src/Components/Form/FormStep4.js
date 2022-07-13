@@ -27,6 +27,12 @@ export default function FormStep4() {
             step: prev.step - 1
         }))
     }
+
+
+    // const isValidPostalCode = (postalCode) => {
+    //     return /^\d\d-\d\d\d$/.test(postalCode)
+    // }
+
     return (
         <div className="step">
             <div className="step_counter">Krok 3/4</div>

@@ -13,7 +13,6 @@ export default function FormStep1() {
     const [selectedThing, setSelectedThing] = useState(state.things)
 
     const handleChange = ({ target }) => {
-
         if (selectedThing.includes(target.name)) {
             setSelectedThing(prev => prev.filter(el => el !== target.name))
             return;
