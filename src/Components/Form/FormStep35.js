@@ -21,13 +21,13 @@ export default function FormStep35() {
         <div className="step">
             <h1 style={{fontSize: "4rem", marginBottom: "2rem", marginTop: "4rem"}}>Test state'ów:</h1>
             <p style={{fontSize: "2rem", marginBottom: "2rem"}}><span>Rzeczy do oddania: </span>
-                <span style={{fontWeight: "700"}}>{state.selectedThing}</span></p>
+                <span style={{fontWeight: "700"}}>{state.things}</span></p>
             <p style={{fontSize: "2rem", marginBottom: "2rem"}}><span>Ilość toreb: </span>
-                <span style={{fontWeight: "700"}}>{state.selectedBag}</span></p>
+                <span style={{fontWeight: "700"}}>{state.bags}</span></p>
             <p style={{fontSize: "2rem", marginBottom: "2rem"}}><span>Wybrana lokalizacja: </span>
-                <span style={{fontWeight: "700"}}>{state.selectedLocation}</span></p>
+                <span style={{fontWeight: "700"}}>{state.location}</span></p>
             <p style={{fontSize: "2rem", marginBottom: "2rem"}}><span>Komu chcesz pomóc: </span>
-                <span style={{fontWeight: "700"}}>{state.selectedHelp.join(",")}</span></p>
+                <span style={{fontWeight: "700"}}>{state.help.join(",")}</span></p>
             <p style={{fontSize: "2rem", marginBottom: "2rem"}}><span>Konkretna organizacja: </span>
                 <span style={{fontWeight: "700"}}>{state.specificLocation}</span></p>
 

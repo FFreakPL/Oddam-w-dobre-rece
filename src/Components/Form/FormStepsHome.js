@@ -5,8 +5,7 @@ import HomeButtonBackToTop from "../HomeButtonBackToTop";
 import FormImportant from "./FormImportant";
 import FormStep1 from "./FormStep1";
 import FormStep2 from "./FormStep2";
-import Step3 from "./FormStep3";
-import FormStep35 from "./FormStep35";
+import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
 import FormStep45 from "./FormStep45";
 import FormSummary from "./FormSummary";
@@ -18,9 +17,22 @@ export const DataContext = React.createContext({})
 
 export default function FormStepsHome(){
     const [user, loading] = useAuthState(auth);
-    const [state, setState] = useState({
+    const data =  {
         step: 1,
-    })
+        things: [],
+        bags: '—— wybierz ——',
+        location: '—— wybierz ——',
+        help: [],
+        specificLocation: "",
+        street: "",
+        city: "",
+        postalCode: "",
+        phoneNumber: "",
+        date: "",
+        hour: "",
+        comment: ""
+    }
+    const [state, setState] = useState(data)
 
 
     const getComponent = () => {
@@ -30,11 +42,11 @@ export default function FormStepsHome(){
             case 2:
                 return <FormStep2 />
             case 3:
-                return <Step3 />
+                return <FormStep3 />
             case 4:
-                return <FormStep35 />
-            case 5:
                 return <FormStep4 />
+            case 5:
+                return <FormStep45 />
             case 6:
                 return <FormStep45 />
             case 7:
