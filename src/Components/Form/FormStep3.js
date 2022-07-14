@@ -67,14 +67,19 @@ export default function FormStep3() {
 
     return (
         <>
-            <FormImportant text={`Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacja
+            <FormImportant text={`Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. 
+            Możesz też filtrować organizacja
             po ich lokalizacji bądź celu ich pomocy`}/>
             <div className="step">
                 <div className="step_counter">Krok 3/4</div>
                 <div className="step_container">
                     <div className="step_title">Lokalizacja:</div>
-                    <select className="step_select" defaultValue={state.location} onChange={handleChangeLocation}>
-                        <option className="step_item_firstOne" value={'—— wybierz ——'} disabled>—— wybierz ——</option>
+                    <select className="step_select"
+                            defaultValue={state.location}
+                            onChange={handleChangeLocation}>
+                        <option className="step_item_firstOne"
+                                value={'—— wybierz ——'}
+                                disabled>—— wybierz ——</option>
                         {location.map((item, index) => (
                             <option
                                 className="step_item"

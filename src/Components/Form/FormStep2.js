@@ -45,15 +45,20 @@ export default function FormStep2() {
 
     return (
         <>
-            <FormImportant text={`Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokłądną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ`}/>
+            <FormImportant text={`Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokłądną instrukcję 
+            jak poprawnie spakować rzeczy znajdziesz TUTAJ`}/>
             <div className="step">
                 <div className="step_counter">Krok 2/4</div>
                 <div className="step_container">
                     <div className="step_title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</div>
                     <div className="step_select_container">
                         <p>Liczba worków to:</p>
-                        <select className="step_select" defaultValue={state.bags} onChange={handleChange}>
-                            <option className="step_item_firstOne" value={'—— wybierz ——'} disabled>—— wybierz ——</option>
+                        <select className="step_select"
+                                defaultValue={state.bags}
+                                onChange={handleChange}>
+                            <option className="step_item_firstOne"
+                                    value={'—— wybierz ——'}
+                                    disabled>—— wybierz ——</option>
                             {bags.map((item, index) => (
                                 <option
                                     className="step_item"

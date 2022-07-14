@@ -11,6 +11,8 @@ export default function FormStep4() {
     const [postalCode, setPostalCode] = useState(state.postalCode);
     const [date, setDate] = useState(state.date);
     const [hour, setHour] = useState(state.hour)
+
+    //handleChange:
     const handleChange = ({ target }) => {
         setState(prev => {
             return {
@@ -108,8 +110,6 @@ export default function FormStep4() {
         button = <FormButton props={handleNext} name={"Dalej"}/>
     }
 
-console.log(state)
-    console.log(city.length)
     return (
         <>
             <FormImportant text={`Podaj adres oraz termin odbioru rzeczy`}/>
@@ -123,26 +123,50 @@ console.log(state)
                             <p className="step_subTitle2">Adres odbioru</p>
                             <div className="step_form_left_inputs">
                                 <label htmlFor="street">Ulica</label>
-                                <input type="text" name="street" defaultValue={state.street}  className="step_form_left_inputs_street" onChange={handleChangeStreet} required/>
+                                <input type="text"
+                                       name="street"
+                                       defaultValue={state.street}
+                                       className="step_form_left_inputs_street"
+                                       onChange={handleChangeStreet} required/>
                             </div>
                             <div className="step_form_left_inputs">
                                 <label htmlFor="city">Miasto</label>
-                                <input type="text" name="city" defaultValue={state.city} className="step_form_left_inputs_city" onChange={handleChangeCity} required/>
+                                <input type="text"
+                                       name="city"
+                                       defaultValue={state.city}
+                                       className="step_form_left_inputs_city"
+                                       onChange={handleChangeCity} required/>
                             </div>
                             <div className="step_form_left_inputs">
                                 <label htmlFor="postalCode">Kod<br></br>pocztowy</label>
-                                <input type="text" name="postalCode" placeholder="xx-xxx" defaultValue={state.postalCode} className="step_form_left_inputs_postalCode" onChange={handleChangePostalCode} required/>
+                                <input type="text"
+                                       name="postalCode"
+                                       placeholder="xx-xxx"
+                                       maxLength="6"
+                                       defaultValue={state.postalCode}
+                                       className="step_form_left_inputs_postalCode"
+                                       onChange={handleChangePostalCode} required/>
                             </div>
                             <div className="step_form_left_inputs">
                                 <label htmlFor="phoneNumber">Numer<br></br>telefonu</label>
-                                <input type="text" name="phoneNumber" placeholder="Wpisz 9-cyfrowy numer tel" defaultValue={state.phoneNumber} maxLength="12" className="step_form_left_inputs_phoneNumber" onChange={handleChangePhoneNumber} required/>
+                                <input type="text"
+                                       name="phoneNumber"
+                                       placeholder="Wpisz 9-cyfrowy numer tel"
+                                       defaultValue={state.phoneNumber}
+                                       maxLength="12"
+                                       className="step_form_left_inputs_phoneNumber"
+                                       onChange={handleChangePhoneNumber} required/>
                             </div>
                         </div>
                         <div className="step_form_right">
                             <p className="step_subTitle2">Termin odbioru:</p>
                             <div className="step_form_right_inputs">
                                 <label htmlFor="date">Data</label>
-                                <input type="date" name="date" defaultValue={state.date} className="step_form_right_inputs_date" onChange={handleChangeDate} required/>
+                                <input type="date"
+                                       name="date"
+                                       defaultValue={state.date}
+                                       className="step_form_right_inputs_date"
+                                       onChange={handleChangeDate} required/>
                             </div>
                             <div className="step_form_right_inputs">
                                 <label htmlFor="hour">Godzina</label>
@@ -154,7 +178,11 @@ console.log(state)
                             </div>
                             <div className="step_form_right_inputs">
                                 <label htmlFor="comment">Uwagi<br></br>dla kuriera</label>
-                                <textarea rows="3" name="comment" value={state.comment} className="step_form_right_inputs_comment" onChange={handleChange} />
+                                <textarea rows="3"
+                                          name="comment"
+                                          value={state.comment}
+                                          className="step_form_right_inputs_comment"
+                                          onChange={handleChange} />
                             </div>
                         </div>
                     </div>
@@ -162,11 +190,6 @@ console.log(state)
                 <div className="step_buttons_container">
                     <FormButton props={handleBack} name={"Wstecz"}/>
                     {button}
-                    {/*{(city.length >= 2)*/}
-                    {/*    ? <FormButton props={handleNext} name={"Dalej"}/>*/}
-                    {/*    : <FormButton props={showAlert} name={"Dalej"}/>}*/}
-
-                    {/*<FormButton props={handleNext} name={"Dalej"}/>*/}
                 </div>
             </div>
         </>
