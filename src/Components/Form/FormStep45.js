@@ -43,7 +43,7 @@ export default function FormStep45() {
             <div className="step_buttons_container" style={{display: "flex", justifyContent: "flex-start",
                 alignItems: "flex-end", flexDirection: "row", width: "100%", height: "100%"}}>
                 <FormButton props={handleBack} style={{height: "90px"}} name={"Wstecz"}/>
-                <FormButton props={handleNext} style={{height: "90px"}} name={"Dalej"}/>
+                {/*<FormButton props={handleNext} style={{height: "90px"}} name={"Dalej"}/>*/}
             </div>
         </div>
         </div>

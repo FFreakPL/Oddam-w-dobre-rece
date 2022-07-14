@@ -58,7 +58,6 @@ export default function FormStepsHome(){
         <DataContext.Provider value={{ state, setState }}>
             <HomeButtonBackToTop/>
             <FormLandingComponent/>
-            {state.step < 7 && <FormImportant/>}
             {getComponent()}
             <HomeContact/>
         </DataContext.Provider>

@@ -1,6 +1,8 @@
 import React, {useContext, useState} from "react";
 import FormButton from "../Buttons/ButtonForm";
 import {DataContext} from "./FormStepsHome";
+import FormImportant from "./FormImportant";
+
 
 export default function FormStep1() {
     const things = [
@@ -28,25 +30,29 @@ export default function FormStep1() {
     }
     console.log(state);
     return (
-        <div className="step">
-            <div className="step_counter">Krok 1/4</div>
-            <div className="step_container">
-                <div className="step_title">Zaznacz co chcesz dodać:</div>
-                <div className="step_items">
-                    {things.map((item, index) => (
-                        <div className="step_item" key={index}>
-                            <input
-                                type="radio"
-                                checked={selectedThing.includes(item)}
-                                name={item}
-                                onChange={handleChange}
- />
-                            <span>{item}</span>
-                        </div>
-                    ))}
+        <>
+            <FormImportant text={"Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy " +
+                "wiedzieć komu najlepiej je przekazać."}/>
+            <div className="step">
+                <div className="step_counter">Krok 1/4</div>
+                <div className="step_container">
+                    <div className="step_title">Zaznacz co chcesz dodać:</div>
+                    <div className="step_items">
+                        {things.map((item, index) => (
+                            <div className="step_item" key={index}>
+                                <input
+                                    type="radio"
+                                    checked={selectedThing.includes(item)}
+                                    name={item}
+                                    onChange={handleChange}
+                                />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+                {selectedThing.length !== 0 && <FormButton props={handleNext} name={"Dalej"}/>}
             </div>
-            {selectedThing.length !== 0 && <FormButton props={handleNext} name={"Dalej"}/>}
-        </div>
+        </>
     )
 }
