@@ -85,10 +85,10 @@ export default function FormStep4() {
         return alert("Podaj numer telefonu komórkowego w formacie xxx-xxx-xxx")
     }
     //Walidacja formy zapisu kodu pocztowego i numeru telefonu:
-    const isValidPostalCode = (postalCode) => {
+    const validationPostalCode = (postalCode) => {
         return /^\d\d-\d\d\d$/.test(postalCode)
     }
-    const isValidPhoneNumber = (phoneNumber) => {
+    const validationPhoneNumber = (phoneNumber) => {
         return /^\d\d\d-\d\d\d-\d\d\d$/.test(phoneNumber)
     }
 
@@ -98,9 +98,9 @@ export default function FormStep4() {
         button = <FormButton props={alertStreet} name={"Dalej"}/>
     } else if (city.length < 2) {
         button = <FormButton props={alertCity} name={"Dalej"}/>
-    } else if (!isValidPostalCode(postalCode)) {
+    } else if (!validationPostalCode(postalCode)) {
         button = <FormButton props={alertPostalCode} name={"Dalej"}/>
-    } else if (!isValidPhoneNumber(phoneNumber)) {
+    } else if (!validationPhoneNumber(phoneNumber)) {
         button = <FormButton props={alertPhoneNumber} name={"Dalej"}/>
     } else if (!date) {
         button = <FormButton props={alertDate} name={"Dalej"}/>
@@ -110,11 +110,36 @@ export default function FormStep4() {
         button = <FormButton props={handleNext} name={"Dalej"}/>
     }
 
+    let isValidStreet;
+    let isValidCity;
+    let isValidPostalCode;
+    let isValidPhoneNumber;
+    let isValidDate;
+    let isValidHour
+    if (street.length < 2) {
+       isValidStreet  = <p className="step_alert">Ulica musi zawierać co najmniej 2 znaki!</p>
+    }
+    if (city.length < 2) {
+        isValidCity = <p className="step_alert">Miasto musi zawierać co najmniej 2 znaki!</p>
+    }
+    if (!validationPostalCode(postalCode)) {
+        isValidPostalCode = <p className="step_alert">Kod pocztowy mus być w formacie xx-xxx</p>
+    }
+    if (!validationPhoneNumber(phoneNumber)) {
+        isValidPhoneNumber = <p className="step_alert">Podaj numer telefonu komórkowego w formacie xxx-xxx-xxx</p>
+    }
+    if (!date) {
+        isValidDate = <p className="step_alert">Podaj datę odbioru!</p>
+    }
+    if (!hour) {
+        isValidHour = <p className="step_alert">Podaj godzinę odbioru dla kuriera!</p>
+    }
+
     return (
         <>
             <FormImportant text={`Podaj adres oraz termin odbioru rzeczy`}/>
             <div className="step">
-                <div className="step_counter">Krok 3/4</div>
+                <div className="step_counter">Krok 4/4</div>
                 <div className="step_container">
                     <div className="step_title">Podaj adres oraz termin odbioru rzecz przez kuriera</div>
                     <div className="step_form_container">
@@ -129,6 +154,7 @@ export default function FormStep4() {
                                        className="step_form_left_inputs_street"
                                        onChange={handleChangeStreet} required/>
                             </div>
+                            {street.length ? isValidStreet : <></>}
                             <div className="step_form_left_inputs">
                                 <label htmlFor="city">Miasto</label>
                                 <input type="text"
@@ -137,6 +163,7 @@ export default function FormStep4() {
                                        className="step_form_left_inputs_city"
                                        onChange={handleChangeCity} required/>
                             </div>
+                            {city.length ? isValidCity : <></>}
                             <div className="step_form_left_inputs">
                                 <label htmlFor="postalCode">Kod<br></br>pocztowy</label>
                                 <input type="text"
@@ -147,16 +174,18 @@ export default function FormStep4() {
                                        className="step_form_left_inputs_postalCode"
                                        onChange={handleChangePostalCode} required/>
                             </div>
+                            {postalCode.length ? isValidPostalCode : <></>}
                             <div className="step_form_left_inputs">
                                 <label htmlFor="phoneNumber">Numer<br></br>telefonu</label>
                                 <input type="text"
                                        name="phoneNumber"
-                                       placeholder="Wpisz 9-cyfrowy numer tel"
+                                       placeholder="xxx-xxx-xxx"
                                        defaultValue={state.phoneNumber}
                                        maxLength="12"
                                        className="step_form_left_inputs_phoneNumber"
                                        onChange={handleChangePhoneNumber} required/>
                             </div>
+                            {phoneNumber.length ? isValidPhoneNumber : <></>}
                         </div>
                         <div className="step_form_right">
                             <p className="step_subTitle2">Termin odbioru:</p>
@@ -168,6 +197,7 @@ export default function FormStep4() {
                                        className="step_form_right_inputs_date"
                                        onChange={handleChangeDate} required/>
                             </div>
+                            {date.length ? isValidDate : <></>}
                             <div className="step_form_right_inputs">
                                 <label htmlFor="hour">Godzina</label>
                                 <input type="time"
@@ -176,6 +206,7 @@ export default function FormStep4() {
                                        className="step_form_right_inputs_hour"
                                        onChange={handleChangeHour} required/>
                             </div>
+                            {hour.length ? isValidHour : <></>}
                             <div className="step_form_right_inputs">
                                 <label htmlFor="comment">Uwagi<br></br>dla kuriera</label>
                                 <textarea rows="3"

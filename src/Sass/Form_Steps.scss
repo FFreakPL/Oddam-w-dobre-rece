@@ -179,4 +179,81 @@
       }
     }
   }
+  &_upperInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40%;
+
+    &_subTitle3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 45px;
+    }
+  }
+  &_alert {
+    margin-bottom: 1vh;
+    color: red;
+    font-weight: 600;
+  }
+  &_summary {
+    &_icon {
+      width: 50px;
+      height: 50px;
+    }
+    &_title {
+      font-size:36px;
+      font-weight: 600;
+      margin-top: 70px;
+
+    }
+    &_upperInfo {
+      &_subTitle3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 45px;
+        margin-bottom: 20px;
+      }
+    }
+    &_container{
+      &_info {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-size: 24px;
+          margin-left: 19px;
+        }
+      }
+      &_adress {
+        display: flex;
+        margin-top: 58px;
+        height: 308px;
+        width: 40vw;
+        justify-content: space-between;
+      }
+    }
+    &_subTitle3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 19px;
+    }
+    &_left,
+    &_right {
+      width: 18vw;
+      &_inputs {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-family: $primary-font-light;
+        font-size: 24px;
+
+        &_comment {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
 }

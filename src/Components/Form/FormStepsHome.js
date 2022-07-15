@@ -2,12 +2,10 @@ import React, { useState, useEffect, useContext, createContext} from 'react';
 import FormLandingComponent from "../HomeFormLandingComponent";
 import HomeContact from "../HomeContact";
 import HomeButtonBackToTop from "../HomeButtonBackToTop";
-import FormImportant from "./FormImportant";
 import FormStep1 from "./FormStep1";
 import FormStep2 from "./FormStep2";
 import FormStep3 from "./FormStep3";
 import FormStep4 from "./FormStep4";
-import FormStep45 from "./FormStep45";
 import FormSummary from "./FormSummary";
 import FormThankYou from "./FormThankYou";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -45,12 +43,8 @@ export default function FormStepsHome(){
             case 4:
                 return <FormStep4 />
             case 5:
-                return <FormStep45 />
-            case 6:
-                return <FormStep45 />
-            case 7:
                 return <FormSummary />
-            case 8:
+            case 6:
                 return <FormThankYou />
         }
     }
