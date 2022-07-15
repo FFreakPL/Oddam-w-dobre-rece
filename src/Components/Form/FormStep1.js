@@ -28,7 +28,7 @@ export default function FormStep1() {
             step: prev.step + 1
         }))
     }
-    console.log(state);
+
     return (
         <>
             <FormImportant text={"Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy " +

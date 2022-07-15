@@ -13,7 +13,7 @@ export default function FormStep1() {
     const [user, loading] = useAuthState(auth);
     const { state, setState } = useContext(DataContext);
 
-    console.log(state)
+
     const sendForm = async () => {
         setState(prev => ({
             ...prev,
