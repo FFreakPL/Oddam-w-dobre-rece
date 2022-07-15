@@ -255,5 +255,16 @@
       }
     }
   }
-
+  &_thankYou {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+    font-size: 40px;
+    font-family: $primary-font-light;
+    line-height: 4.5vh;
+  }
 }
