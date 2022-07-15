@@ -12,23 +12,25 @@ the stuff from You:)
 <p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392380-1d0e3e6c-58c8-4740-82cc-295d361827af.png"></p>
 
 `Contact Form`
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392382-dd9452d9-293b-4b21-b8a9-4d1b7341bbca.png"></p>
+<p><img width="360" alt="Contact form" src="https://user-images.githubusercontent.com/94534923/178392382-dd9452d9-293b-4b21-b8a9-4d1b7341bbca.png"></p>
 
 `Auth page Login/Register/ResetPassword`
 
-<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392371-ea9123e6-618f-46ae-8316-c4715bfb3848.png"></p>
+<img width="360" alt="Password reset" src="https://user-images.githubusercontent.com/94534923/178392371-ea9123e6-618f-46ae-8316-c4715bfb3848.png"></p>
 
 `LoggedIn HomePage`
 
-<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392374-861ebad6-2ecf-4da8-8222-f29b853606f5.png"></p>
+<img width="360" alt="LoggedIn HomePage" src="https://user-images.githubusercontent.com/94534923/178392374-861ebad6-2ecf-4da8-8222-f29b853606f5.png"></p>
 
 `Form component`
 
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392387-5790e00b-f586-42c3-9f5f-795536c4a337.png"></p>
-<p><img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392393-10670389-8191-46f6-90e3-831a21f18ca0.png">
-<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392395-96985ff1-a0bd-48fd-9ac2-7693d6f8ef70.png">
-<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392396-31bf65cc-6df1-4896-a54a-111fbfabdd50.png">
-<img width="360" alt="HomePage" src="https://user-images.githubusercontent.com/94534923/178392399-4064a5f5-2551-405e-a9bf-1b3c85efc8d0.png"></p>
+<p><img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392387-5790e00b-f586-42c3-9f5f-795536c4a337.png"></p>
+<p><img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392393-10670389-8191-46f6-90e3-831a21f18ca0.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392395-96985ff1-a0bd-48fd-9ac2-7693d6f8ef70.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392396-31bf65cc-6df1-4896-a54a-111fbfabdd50.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392399-4064a5f5-2551-405e-a9bf-1b3c85efc8d0.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179243553-3b76498e-3ccd-4cef-a642-074b2f4acf41.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179243524-96d54c24-b5af-4f87-80f2-5ddc8dfb4de4.png"></p>
 
 ## Running APP (almost done...)
 <p>https://giveingoodhands.vercel.app</p>
