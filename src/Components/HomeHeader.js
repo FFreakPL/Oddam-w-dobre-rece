@@ -15,28 +15,28 @@ const navigate = useNavigate();
                 <li className="header_item" onClick={() => handleClick()}>Start</li>
                 <li className="header_item">
                     <Link
-                        to="HomeInfo"
+                        to="Info"
                         spy={true}
                         smooth={true}
                         duration={500}>O co chodzi?</Link>
                 </li>
                 <li className="header_item">
                     <Link
-                        to="HomeAboutUs"
+                        to="AboutUs"
                         spy={true}
                         smooth={true}
                         duration={500}>O nas</Link>
                 </li>
                 <li className="header_item">
                     <Link
-                        to="HomeOrganizations"
+                        to="Organizations"
                         spy={true}
                         smooth={true}
                         duration={500}>Fundacja i organizacje</Link>
                 </li>
                 <li className="header_item">
                     <Link
-                        to="HomeContact"
+                        to="Contact"
                         spy={true}
                         smooth={true}
                         duration={500}>Kontakt</Link>

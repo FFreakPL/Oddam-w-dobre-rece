@@ -3,22 +3,58 @@ import FormButton from "../Buttons/ButtonForm";
 import {DataContext} from "./FormStepsHome";
 import Cloth from "../../assets/Icon-1.svg";
 import Refresh from "../../assets/Icon-4.svg";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {auth} from "../Utilities/UtilitiesFirebase";
+import { doc, setDoc } from "firebase/firestore";
+import {addDoc, collection} from "firebase/firestore";
+import {db} from "../Utilities/UtilitiesFirebase";
 
 export default function FormStep1() {
+    const [user, loading] = useAuthState(auth);
     const { state, setState } = useContext(DataContext);
 
-    const handleNext = () => {
+    console.log(state)
+    const sendForm = async () => {
         setState(prev => ({
             ...prev,
             step: prev.step + 1
         }))
-    }
+        try {
+            const collectionRef = collection(db, "formData")
+            const payload = {
+                userUid: user.uid,
+                userEmail: user.email,
+                thingsToGive: state.things,
+                bags: +state.bags,
+                location: state.location,
+                helpConsumer: state.help,
+                specificLocation: state.specificLocation,
+                city: state.city,
+                street: state.street,
+                postalCode: state.postalCode,
+                phoneNumber: state.phoneNumber,
+                date: state.date,
+                hour: state.hour,
+                comment: state.comment,
+                }
+            await addDoc(collectionRef, payload)
+        }
+        catch (err) {
+            console.error(err);
+            alert(err.message);
+        }
+        finally {
+            alert("Formularz został wysłany! Dziękujemy za Twoją pomoc!")
+        }
+    };
+
     const handleBack = () => {
         setState(prev => ({
             ...prev,
             step: prev.step - 1
         }))
     }
+
     return (
         <>
             <div className="step">
@@ -80,7 +116,7 @@ export default function FormStep1() {
                 
                 <div className="step_summary_buttons_container">
                     <FormButton props={handleBack} name={"Wstecz"}/>
-                <FormButton props={handleNext} name={"Potwierdzam"}/>
+                <FormButton props={sendForm} name={"Potwierdzam"}/>
             </div>
             </div>
         </>

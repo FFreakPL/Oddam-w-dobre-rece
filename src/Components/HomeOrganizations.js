@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import Firebase from './Utilities/UtilitiesFirebase';
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth, db, database} from "./Utilities/UtilitiesFirebase";
+import {auth, db} from "./Utilities/UtilitiesFirebase";
 import {collection, onSnapshot} from "firebase/firestore";
 import Decoration from "./Decorations/Decoration";
 import UtilitiesPagination from "./Utilities/UtilitiesPagination"
