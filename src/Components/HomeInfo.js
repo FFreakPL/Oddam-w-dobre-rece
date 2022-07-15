@@ -5,6 +5,7 @@ import {collection, onSnapshot} from "firebase/firestore";
 export default function HomeInfo() {
     const [firebaseData, setFirebaseData] = useState("")
     const [bags, setBags] = useState("")
+    const [organizations, setOrganizations] = useState("")
 
     useEffect(() => {
         onSnapshot(collection(db, "formData"), (firebaseData) => {
@@ -23,7 +24,16 @@ export default function HomeInfo() {
         }
     },[firebaseData])
 
-    console.log(bags)
+    //Helped Organizations from Firebase
+    useEffect(() => {
+        if (firebaseData) {
+            const organizationsSum = firebaseData.map((organization, index) => {
+                return firebaseData[index].organization;
+                organizationsSum();
+            }, 0)
+            setOrganizations(organizationsSum.length)
+        }
+    },[firebaseData])
 
     return (
         <div name="info" className="info">
@@ -36,7 +46,7 @@ export default function HomeInfo() {
                         Aliquam erat volutpat.</p>
                 </div>
                 <div className="info_item">
-                    <p className="info_item_number">5</p>
+                    <p className="info_item_number">{organizations}</p>
                     <p className="info_item_title">wspartych organizacji</p>
                     <p className="info_item_description">
                         Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma.
