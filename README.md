@@ -30,9 +30,10 @@ the stuff from You:)
 <img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392396-31bf65cc-6df1-4896-a54a-111fbfabdd50.png">
 <img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/178392399-4064a5f5-2551-405e-a9bf-1b3c85efc8d0.png">
 <img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179243553-3b76498e-3ccd-4cef-a642-074b2f4acf41.png">
-<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179243524-96d54c24-b5af-4f87-80f2-5ddc8dfb4de4.png"></p>
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179243524-96d54c24-b5af-4f87-80f2-5ddc8dfb4de4.png">
+<img width="360" alt="Form" src="https://user-images.githubusercontent.com/94534923/179342184-f8067e11-9751-4c80-8a8a-758c2d15ac3b.png"></p>
 
-## Running APP (almost done...)
+## Running APP
 <p>https://giveingoodhands.vercel.app</p>
 
 ## Feautures
@@ -44,7 +45,7 @@ the stuff from You:)
 <li>Advanced Form sending user's choices to API</li>
 <li>Login, signup, passwordReset, logout with Firebase</li>
 <li>React Scroll, Pagination, Context API</li>
-<li>Responsive design SOON:)</li>
+<li>Responsive design in progress:)</li>
 
 ## Technologies
 <p align="left">
